@@ -1,0 +1,38 @@
+{
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "NavLink": {
+    "all": "All"
+  },
+  "SearchBar": {
+    "searchPlaceholder": "Search for products...",
+    "searchButton": "search",
+    "searchAriaLabel": "search for products"
+  },
+  "LoginForm": {
+    "emailPlaceholder": "Email",
+    "passwordPlaceholder": "Password",
+    "loginButton": "Log In",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "errorMessage": "Email and password are required"
+  },    "ShoppingCart": {
+    "emptyCartTitle": "Your Shopping Cart is empty",
+    "emptyCartMessage": "Looks like you haven’t added any items to the cart yet.",
+    "exploreProductsButton": "Explore products",
+    "cartTitle": "Your Shopping Cart",
+    "variantLabel": "Variant",
+    "quantityLabel": "Qty",
+    "totalLabel": "Your Total",
+    "shippingMessage": "Shipping will be calculated in the next step"
+},        "CheckoutLink": {
+  "checkoutButton": "Checkout"
+},    "DeleteLineButton": {
+  "remove": "Remove",
+  "removing": "Removing",
+  "srLabel": "line from cart"
+}
+
+}

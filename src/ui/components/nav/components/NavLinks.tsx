@@ -1,22 +1,25 @@
 import Link from "next/link";
 import { NavLink } from "./NavLink";
 import { executeGraphQL } from "@/lib/graphql";
-import { MenuGetBySlugDocument } from "@/gql/graphql";
+import { LanguageCodeEnum, MenuGetBySlugDocument } from "@/gql/graphql";
+import { getLocale, getTranslations } from "next-intl/server";
+import { getLanguageCodeEnum, getTranslatedValue } from "@/lib/utils";
 
 export const NavLinks = async ({ channel }: { channel: string }) => {
+	const locale = await getLocale(); 
 	const navLinks = await executeGraphQL(MenuGetBySlugDocument, {
-		variables: { slug: "navbar", channel },
+		variables: { slug: "navbar", channel, languageCode: getLanguageCodeEnum(locale) },
 		revalidate: 60 * 60 * 24,
 	});
-
+	const t = await getTranslations('NavLink');
 	return (
 		<>
-			<NavLink href="/products">All</NavLink>
+			<NavLink href="/products">{t("all")}</NavLink>
 			{navLinks.menu?.items?.map((item) => {
 				if (item.category) {
 					return (
 						<NavLink key={item.id} href={`/categories/${item.category.slug}`}>
-							{item.category.name}
+							{getTranslatedValue(item.category, "name")}
 						</NavLink>
 					);
 				}

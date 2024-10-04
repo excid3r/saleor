@@ -2,6 +2,7 @@
 
 import { useTransition } from "react";
 import { deleteLineFromCheckout } from "./actions";
+import { useTranslations } from "next-intl"; // Import useTranslations hook
 
 type Props = {
 	lineId: string;
@@ -10,6 +11,7 @@ type Props = {
 
 export const DeleteLineButton = ({ lineId, checkoutId }: Props) => {
 	const [isPending, startTransition] = useTransition();
+	const t = useTranslations('DeleteLineButton'); // Initialize translations using the DeleteLineButton namespace
 
 	return (
 		<button
@@ -21,8 +23,8 @@ export const DeleteLineButton = ({ lineId, checkoutId }: Props) => {
 			}}
 			aria-disabled={isPending}
 		>
-			{isPending ? "Removing" : "Remove"}
-			<span className="sr-only">line from cart</span>
+			{isPending ? t("removing") : t("remove")} {/* Use translations for the button text */}
+			<span className="sr-only">{t("srLabel")}</span> {/* Use translation for screen reader label */}
 		</button>
 	);
 };

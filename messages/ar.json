@@ -1,0 +1,39 @@
+{
+  "HomePage": {
+    "title": "مرحبا بالعالم!",
+    "about": "اذهب إلى صفحة حول"
+  },
+  "NavLink": {
+    "all": "الكل"
+  },
+  "SearchBar": {
+    "searchPlaceholder": "ابحث عن المنتجات...",
+    "searchButton": "بحث",
+    "searchAriaLabel": "البحث عن المنتجات"
+  },
+  "LoginForm": {
+    "emailPlaceholder": "البريد الإلكتروني",
+    "passwordPlaceholder": "كلمة المرور",
+    "loginButton": "تسجيل الدخول",
+    "emailLabel": "البريد الإلكتروني",
+    "passwordLabel": "كلمة المرور",
+    "errorMessage": "البريد الإلكتروني وكلمة المرور مطلوبان"
+  },
+  "ShoppingCart": {
+    "emptyCartTitle": "عربة التسوق الخاصة بك فارغة",
+    "emptyCartMessage": "يبدو أنك لم تضف أي عناصر إلى العربة حتى الآن.",
+    "exploreProductsButton": "استكشاف المنتجات",
+    "cartTitle": "عربة التسوق الخاصة بك",
+    "variantLabel": "النوع",
+    "quantityLabel": "الكمية",
+    "totalLabel": "المجموع الكلي",
+    "shippingMessage": "سيتم حساب الشحن في الخطوة التالية"
+},
+"CheckoutLink": {
+  "checkoutButton": "الدفع"
+},    "DeleteLineButton": {
+  "remove": "إزالة",
+  "removing": "جارٍ الإزالة",
+  "srLabel": "المنتج من العربة"
+}
+}

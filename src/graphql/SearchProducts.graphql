@@ -4,7 +4,8 @@ query SearchProducts(
 	$sortDirection: OrderDirection!
 	$first: Int!
 	$after: String
-	$channel: String!
+	$channel: String!,
+	$languageCode: LanguageCodeEnum!
 ) {
 	products(
 		first: $first

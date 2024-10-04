@@ -1,7 +1,8 @@
 import { ProductListByCollectionDocument } from "@/gql/graphql";
 import { executeGraphQL } from "@/lib/graphql";
+import { getLanguageCodeEnum } from "@/lib/utils";
 import { ProductList } from "@/ui/components/ProductList";
-
+import {getLocale} from "next-intl/server"
 export const metadata = {
 	title: "ACME Storefront, powered by Saleor & Next.js",
 	description:
@@ -9,10 +10,13 @@ export const metadata = {
 };
 
 export default async function Page({ params }: { params: { channel: string } }) {
+	const locale = await getLocale()
 	const data = await executeGraphQL(ProductListByCollectionDocument, {
 		variables: {
 			slug: "featured-products",
 			channel: params.channel,
+			languageCode: getLanguageCodeEnum(locale)
+			
 		},
 		revalidate: 60,
 	});

@@ -1,6 +1,8 @@
 import { getServerAuthClient } from "@/app/config";
+import { getTranslations } from "next-intl/server";
 
 export async function LoginForm() {
+	const t = await getTranslations('LoginForm');
 	return (
 		<div className="mx-auto mt-16 w-full max-w-lg">
 			<form
@@ -25,23 +27,23 @@ export async function LoginForm() {
 			>
 				<div className="mb-2">
 					<label className="sr-only" htmlFor="email">
-						Email
+					{t("emailLabel")}
 					</label>
 					<input
 						type="email"
 						name="email"
-						placeholder="Email"
+						placeholder={t("emailPlaceholder")}
 						className="w-full rounded border bg-neutral-50 px-4 py-2"
 					/>
 				</div>
 				<div className="mb-4">
 					<label className="sr-only" htmlFor="password">
-						Password
+					{t("passwordLabel")}
 					</label>
 					<input
 						type="password"
 						name="password"
-						placeholder="Password"
+						placeholder={t("passwordPlaceholder")}
 						autoCapitalize="off"
 						autoComplete="off"
 						className="w-full rounded border bg-neutral-50 px-4 py-2"
@@ -52,7 +54,7 @@ export async function LoginForm() {
 					className="rounded bg-neutral-800 px-4 py-2 text-neutral-200 hover:bg-neutral-700"
 					type="submit"
 				>
-					Log In
+					{t("loginButton")}
 				</button>
 			</form>
 			<div></div>
